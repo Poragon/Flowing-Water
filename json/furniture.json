@@ -1,0 +1,70 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_grid_water_pump_base",
+    "name": "grid water pump",
+    "looks_like": "t_water_pump",
+    "description": "An electric pump that gathers ground water for the local plumbing.",
+    "move_cost_mod": 2,
+    "required_str": 100,
+    "symbol": "&",
+    "color": "light_gray",
+    "flags": [ "TRANSPARENT", "THIN_OBSTACLE" ],
+    "bash": {
+      "str_min": 15,
+      "str_max": 80,
+      "sound": "whack!",
+      "sound_fail": "thunk.",
+      "items": [
+        { "item": "steel_chunk", "count": [ 0, 2 ] },
+        { "item": "scrap", "count": [ 3, 6 ] },
+        { "item": "pipe", "count": [ 0, 2 ] }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_grid_water_pump_off",
+    "symbol": "&",
+    "color": "light_gray",
+    "copy-from": "f_grid_water_pump_base",
+    "description": "An electric pump that gathers ground water. This one is turned off.",
+    "examine_action": "transform",
+    "transforms_into": "f_grid_water_pump",
+    "prompt": "Switch on the water pump.",
+    "message": "You switch on the water pump."
+  },
+  {
+    "type": "furniture",
+    "id": "f_grid_water_pump",
+    "symbol": "&",
+    "color": "light_gray",
+    "copy-from": "f_grid_water_pump_base",
+    "description": "An electric pump that gathers ground water for the local plumbing. This one has no power.",
+    "examine_action": "transform",
+    "transforms_into": "f_grid_water_pump_off",
+    "prompt": "Switch off the water pump.",
+    "message": "You switch off the water pump.",
+    "active": [ "charge_watcher", { "min_power": 5, "transform": { "id": "f_grid_water_pump_on", "msg": "The pump quietly whirrs to life." } } ]
+  },
+  {
+    "type": "furniture",
+    "id": "f_grid_water_pump_on",
+    "symbol": "&",
+    "color": "light_gray",
+    "copy-from": "f_grid_water_pump_base",
+    "description": "An electric pump that gathers ground water for the local plumbing. It's currently active.",
+    "examine_action": "transform",
+    "transforms_into": "f_grid_water_pump_off",
+    "prompt": "Switch off the  water pump.",
+    "message": "You switch off the water pump.",
+    "active": [
+        "steady_consumer",
+        {
+          "power": 1,
+          "consume_every": "100 s",
+          "transform": { "id": "f_grid_water_pump", "msg": "The pump sputters, then lay silent." }
+        }
+      ]
+  }
+]

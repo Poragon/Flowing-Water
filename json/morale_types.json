@@ -1,0 +1,14 @@
+[
+    {
+        "id": "morale_shower",
+        "type": "morale_type",
+        "text": "Enjoyed a shower",
+        "permanent": true
+    },
+    {
+        "id": "morale_bath",
+        "type": "morale_type",
+        "text": "Enjoyed a bath",
+        "permanent": true
+    }
+]

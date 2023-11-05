@@ -1,0 +1,20 @@
+[
+    {
+      "type": "furniture",
+      "id": "f_bathtub",
+      "symbol": "~",
+      "color": "white",
+      "copy-from": "f_bathtub",
+      "crafting_pseudo_item": "fake_bath",
+      "examine_action": "use_furn_fake_item"
+    },
+    {
+      "type": "furniture",
+      "id": "f_shower",
+      "symbol": "~",
+      "color": "white",
+      "copy-from": "f_shower",
+      "crafting_pseudo_item": "fake_shower",
+      "examine_action": "use_furn_fake_item"
+    }
+]

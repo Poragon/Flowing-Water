@@ -1,0 +1,11 @@
+[
+    {
+    "type": "effect_type",
+    "id": "morale_shower_effect",
+    "morale": "morale_shower",
+    "max_duration": "1 d",
+    "base_mods": {
+        "morale": [ 10 ]
+    }
+    }
+]

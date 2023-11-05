@@ -1,0 +1,13 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "flowing_water",
+    "name": "Flowing Water",
+    "authors": [ "Poragon" ],
+    "description": "Impliments a map tile based water system for funiture item, and furniture to use said system.",
+    "category": "content",
+    "lua_api_version": 1,
+    "dependencies": [ "bn", "omt_resources" ],
+    "obsolete": false
+  }
+]

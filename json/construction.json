@@ -1,0 +1,15 @@
+[
+    {
+        "type": "construction",
+        "id": "constr_grid_water_pump",
+        "group": "electronic_pump",
+        "category": "CONSTRUCT",
+        "required_skills": [ [ "fabrication", 4 ], [ "mechanics", 2 ], [ "electronics", 2 ] ],
+        "time": "240 m",
+        "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "WRENCH", "level": 1 } ], [ { "id": "SCREW", "level": 1 } ] ],
+        "using": [ [ "soldering_standard", 20 ] ],
+        "components": [ [ [ "well_pump", 1 ] ], [ [ "pipe", 6 ] ], [ [ "motor_small", 1 ] ] ],
+        "pre_terrain": "t_covered_well",
+        "post_furniture": "f_grid_water_pump"
+    }
+]
